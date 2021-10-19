@@ -1,0 +1,33 @@
+button {
+  border: none;
+  background-color: white;
+  color: black;
+  transition-duration: 0.2s;
+  cursor: pointer;
+  font-size: 19px;
+}
+
+.button:hover{
+  background-color: #dedede;
+}
+
+.titles {
+  background-color: #dedede;
+}
+
+nav .navbar-brand
+{
+    /* size for brand */
+    font-size: 20px;
+}
+
+/* Colors for brand */
+nav .navbar-brand .gray
+{
+    color: #828282;
+}
+
+nav .navbar-brand .black
+{
+    color: black;
+}

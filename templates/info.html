@@ -1,0 +1,55 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    {{country.name}}
+{% endblock %}
+
+{% block main %}
+    <img style="margin-bottom:1cm" src={{country.flag}} width="300" height="200">
+
+    <h5 class="titles">COUNTRY</h5>
+    <h5 style="margin-bottom:1cm">{{country.name}}</h5>
+
+    <h5 class="titles">CAPITAL</h5>
+    <h5 style="margin-bottom:1cm">{{country.capital}}</h5>
+
+    <h5 class="titles">REGION</h5>
+    <h5 style="margin-bottom:1cm">{{country.region}}</h5>
+
+    <h5 class="titles">SUB-REGION</h5>
+    <h5 style="margin-bottom:1cm">{{country.subregion}}</h5>
+
+    <h5 class="titles">POPULATION</h5>
+    <h5 style="margin-bottom:1cm">{{country.population}} million</h5>
+
+    <h5 class="titles">AREA</h5>
+    <h5 style="margin-bottom:1cm">{{country.area}} km²</h5>
+
+    <h5 class="titles">BORDERS</h5>
+    {% for border in borders %}
+        <form action="/" method="post">
+            <button class="button" type="submit" name="name" value="{{border.name}}">{{border.name}}</button>
+            <h5></h5>
+    {% endfor %}
+    <h5 style="margin-bottom:1cm"></h5>
+
+    <h5 class="titles">CURRENCIES</h5>
+    {% for currency in currencies %}
+        <h5 style="display: inline-block">{{currency.currency}}</h5>
+        <h5 style="display: inline-block">{{(currency.symbol)}}</h5>
+    {% endfor %}
+    <h5 style="margin-bottom:1cm"></h5>
+
+    <h5 class="titles">LANGUAGES</h5>
+    {% for language in languages %}
+        <h5>{{language.language}}</h5>
+    {% endfor %}
+    <h5 style="margin-bottom:1cm"></h5>
+
+    <h5 class="titles">REGIONAL BLOCS</h5>
+    {% for bloc in blocs %}
+        <h5 style="display: inline-block">{{bloc.name}}</h5>
+        <h5 style="display: inline-block">{{bloc.acronym}}</h5>
+    {% endfor %}
+
+{% endblock %}

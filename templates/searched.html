@@ -1,0 +1,14 @@
+ {% extends "layout.html" %}
+
+{% block title %}
+    Advanced Search
+{% endblock %}
+
+{% block main %}
+    {% for country in countries %}
+        <form action="/" method="post">
+            <button class="button" type="submit" name="name" value="{{country.name}}">{{country.name}}</button>
+            <h5></h5>
+    {% endfor %}
+
+{% endblock %}

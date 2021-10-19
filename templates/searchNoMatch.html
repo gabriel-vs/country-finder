@@ -1,0 +1,81 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Advanced Search
+{% endblock %}
+
+{% block main %}
+<form action="/search" method="post">
+    
+    <select name="border">
+        <option disabled selected value="">Borders</option>
+        {% for country in countries %}
+
+        <option value="{{country}}">{{country}}</option>
+
+        {% endfor %}
+    </select>
+    
+    <h1></h1>
+    
+    <select name="region">
+        <option disabled selected value="">Region</option>
+        {% for region in regions %}
+
+        <option value="{{region}}">{{region}}</option>
+
+        {% endfor %}
+    </select>
+    
+    <h1></h1>
+    
+    <select name="subRegion">
+        <option disabled selected value="">Subregion</option>
+        {% for subRegion in subRegions %}
+
+        <option value="{{subRegion}}">{{subRegion}}</option>
+
+        {% endfor %}
+    </select>
+    
+    <h1></h1>
+    
+    <select name="currency">
+        <option disabled selected value="">Currency</option>
+        {% for currency in currencies %}
+
+        <option value="{{currency}}">{{currency}}</option>
+
+        {% endfor %}
+    </select>
+    
+    <h1></h1>
+    
+    <select name="language">
+        <option disabled selected value="">Language</option>
+        {% for language in languages %}
+
+        <option value="{{language}}">{{language}}</option>
+
+        {% endfor %}
+    </select>
+    
+    <h1></h1>
+    
+    <select name="bloc">
+        <option disabled selected value="">Regional Bloc</option>
+        {% for bloc in blocs %}
+
+        <option value="{{bloc}}">{{bloc}}</option>
+
+        {% endfor %}
+    </select>
+    
+    <h1></h1>
+    
+    <input class="btn btn-primary" type="submit" value="Search">
+</form>
+
+    <h5></h5>
+    <h5 style="color:red">No match.</h5>
+{% endblock %}
